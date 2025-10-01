@@ -34,40 +34,64 @@ nav {
   padding: 1em;
   text-align: center;
 }
-nav ul { list-style-type: none; margin: 0; padding: 0; }
-nav li { display: inline; margin: 0 15px; }
-nav a { text-decoration: none; color: #000080; }
-nav a:hover { text-decoration: underline; }
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000080;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 /* === Main content === */
-main { padding: 1px 20px 20px; }
+main {
+  padding: 1px 20px 20px;
+}
 
-h1 { margin: 0; }
-h1, h2, h3, footer { font-family: Georgia, "Times New Roman", serif; }
-h2 { color: #1976d2; text-shadow: 1px 1px #ccc; }
-h3 { color: #003; }
-dt { color: #002171; }
+h1 {
+  margin: 0;
+}
+
+h1, h2, h3, footer {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h2 {
+  color: #1976d2;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+h3 {
+  color: #003;
+}
+
+dt {
+  color: #002171;
+}
+
+/* ✅ Custom bullet markers */
+main ul {
+  list-style-image: url(images/marker.gif);
+  margin-left: 20px;
+}
 
 footer {
   font-size: 75%;
   font-style: italic;
-  padding: 2em;
   text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  color: #555;
 }
-
-.resort { color: #1976d2; font-weight: bold; }
-
-/* === Hero images === */
-#homehero, #yurthero, #trailhero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 18.75rem;
-}
-#homehero { background-image: url(images/coast.jpg); }
-#yurthero { background-image: url(images/yurt.jpg); }
-#trailhero { background-image: url(images/trail.jpg); }
-
-/* === Feature list: blue disc bullets, gray text === */
-main ul { list-style-type: disc; padding-left: 40px; }
-main li { margin: 6px 0; color: #555; }
-main li::marker { color: #1976d2; }
