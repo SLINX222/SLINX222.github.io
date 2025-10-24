@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: #90c7e3 1px solid #003 border;
+  background-color: #90c7e3;                 /* FIXED: single color only */
   background-image: linear-gradient(to bottom, #fff, #90c7e3);
   border: 1px solid #000033;
   box-shadow: 3px 3px 3px #333;
@@ -34,7 +34,7 @@ header {
   color: #fff;
   height: auto;
   padding-top: 1rem;
-  text-align: center
+  text-align: center;
 }
 
 header a {
@@ -59,7 +59,7 @@ nav {
 }
 
 nav ul {
-  list-style-type: style none;
+  list-style-type: none;                     /* FIXED: remove "style" */
   margin:0;
   padding-left:0;
   display: flex;
@@ -82,7 +82,6 @@ nav li {
   /* side-by-side links */
   margin: 0 15px;
 }
-
 
 nav a:hover {
   text-decoration: underline;
