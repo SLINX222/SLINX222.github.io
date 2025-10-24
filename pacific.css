@@ -1,28 +1,30 @@
 /* === Global === */
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #EAEAEA;
+  background-color: #90c7e3 1px solid #003 border;
+  background-image: linear-gradient(to bottom, #fff, #90c7e3);
+  border: 1px solid #000033;
+  box-shadow: 3px 3px 3px #333;
   color: #555;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 #wrapper {
-  background-color: #90c7e3 1px solid #003 border;
-  background-image: linear-gradient(to bottom, #fff, #90c7e3);
-  border: 1px solid #000033;
-  box-shadow: 3px 3px 3px #333;
   margin: auto;
-  min-width: 960px;
-  max-width: 2048px;
+  max-width: 75rem;
   width: 80%;
 }
 
- /* === Header === */
+/* === Header === */
 header {
-  background:linear-gradient(to right, #002171, #003);
+  background: linear-gradient(to right, #002171, #003);
   background-image: url(images/sunset.jpg);
   background-position: right;
   background-repeat: no-repeat;
@@ -30,38 +32,54 @@ header {
   justify-content: center;
   align-items: center;
   color: #fff;
-  height: 60px;
-  padding-top: 15px;
+  height: auto;
+  padding-top: 1rem;
   text-align: center
 }
 
 header a {
   text-decoration: none;
 }
-header a:link, 
+
+header a:link,
 header a:visited {
   color: #fff;
 }
+
 header a:hover {
   color: #90c7e3;
 }
+
 /* ===== Navigation (no bullets, horizontal) ===== */
 nav {
-  float: left;
   font-size: 120%;
   font-weight: bold;
-  padding: 1.5em;
-  width: 160px;
+  padding: 0;
+  text-align: center;
 }
 
 nav ul {
-  list-style-type: none;   /* remove bullets */
-  margin: 0;
-  padding: 0;
+  list-style-type: style none;
+  margin:0;
+  padding-left:0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 nav li {
-  display: inline;         /* side-by-side links */
+  border-bottom: 1px solid #003;
+  padding: 0.5rem 0;
+  max-width: 100%;
+  box-sizing: border-box;
+
+}
+nav li {
+  display: inline;
+  /* side-by-side links */
   margin: 0 15px;
 }
 
@@ -69,6 +87,7 @@ nav li {
 nav a:hover {
   text-decoration: underline;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -77,37 +96,38 @@ nav ul {
 nav a {
   text-decoration: none;
 }
+
 nav a:link {
   color: #5c7fa3;
 }
-nav a:visited{
+
+nav a:visited {
   color: #344873;
 }
+
 nav a:hover {
   color: #a52a2a;
 }
+
 /* ===== Main content ===== */
 main {
-  background-color: #fff;  
-  margin-left: 190px;           
-  padding: 1px 20px 20px 30px;
+  background-color: #fff;
+  padding: 0.0625rem 1.25rem 1.25rem 1.875rem;
+}
 
-  overflow: auto;
+section {
+  padding: 1rem;
 }
-section{
-  float: left;
-  padding-left: 2em;
-  padding-right: 2em;
-  width: 33%;
-}
-h1 { 
+
+h1 {
   letter-spacing: 0.25em;
-  margin-bottom: 0; 
+  margin-bottom: 0;
   margin-top: 0
 }
-h1, 
-h2, 
-h3, 
+
+h1,
+h2,
+h3,
 footer {
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -117,17 +137,23 @@ h2 {
   text-shadow: 1px 1px 1px #ccc;
 }
 
-h3 { color: #003; }
-dt { color: #002171; }
+h3 {
+  color: #003;
+  color: #002171;
+}
 
+address {
+  font-style: normal;
+}
 /* ===== Footer ===== */
 footer {
   background-color: #fff;
   font-size: 75%;
   font-style: italic;
-  margin-left: 190px;
   padding: 2em;
   text-align: center;
+  max-width: 100vw;
+  overflow-wrap: break-word;
 }
 
 .resort {
@@ -136,27 +162,94 @@ footer {
 }
 
 /* ===== Hero images (assignment: 300px, fill area) ===== */
-#homehero, 
-#yurthero, 
+#homehero,
+#yurthero,
 #trailhero {
   background-repeat: no-repeat;
-  background-size: cover;   /* fill the box exactly */
-  height: 18.75rem;  
-  margin-left: 190px;              /* explicit per assignment */
+  background-size: cover;
+  height: 18.75rem;
 }
-#homehero { background-image: url(images/coast.jpg); }
-#yurthero { background-image: url(images/yurt.jpg); }
-#trailhero { background-image: url(images/trail.jpg); }
+
+#homehero {
+  background-image: url(images/coast.jpg);
+}
+
+#yurthero {
+  background-image: url(images/yurt.jpg);
+}
+
+#trailhero {
+  background-image: url(images/trail.jpg);
+}
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.card-row section {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+@media (max-width: 32.5rem) {
+  body {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+  }
+  #wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-image: none;
+    padding: 0;
+  }
+  footer {
+    padding: 1em;
+  }
+}
+
+  @media (min-width: 32.5rem) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  nav li {
+    border-bottom: none;
+    padding: 0 1rem;
+    max-width: none;
+  }
+  .card-row {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 100vw;
+  }
+  .card-row section {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
 
 /* ===== Feature list: custom marker.gif bullets in MAIN only ===== */
 main ul {
   list-style-image: url(images/marker.gif);
-  padding-left: 40px;           /* keep your indent */
+  padding-left: 40px;
+  /* keep your indent */
 }
 
 main li {
   margin: 6px 0;
-  color: #555;                  /* keep text gray */
+  color: #555;
+  /* keep text gray */
 }
 
 /* (No ::marker color needed when using list-style-image) */
