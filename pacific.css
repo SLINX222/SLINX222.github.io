@@ -17,9 +17,10 @@ body {
 }
 
 #wrapper {
-  margin: auto;
-  max-width: 75rem;
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  background-color: #90c7e3;
 }
 
 /* === Header === */
@@ -238,6 +239,44 @@ footer {
   }
 }
 
+@media (min-width: 1024px) {
+  /* 2-column layout like the screenshot */
+  #wrapper {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav hero"
+      "nav main"
+      "footer footer";
+    grid-template-columns: 190px 1fr;
+  }
+
+  header { grid-area: header; }
+
+  nav {
+    grid-area: nav;
+    text-align: left;
+    height: 100%;
+    align-self: stretch;
+    background-image: linear-gradient(to bottom, #fff, #90c7e3);
+  }
+
+  .hero { grid-area: hero; }
+
+  main {
+    grid-area: main;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.25rem;
+  }
+
+  footer { grid-area: footer; }
+
+  /* rubric: 1 link per line on large display */
+  nav ul { display: block; }
+  nav li { display: block; }
+}
+
 /* ===== Feature list: custom marker.gif bullets in MAIN only ===== */
 main ul {
   list-style-image: url(images/marker.gif);
@@ -250,5 +289,33 @@ main li {
   color: #555;
   /* keep text gray */
 }
-
 /* (No ::marker color needed when using list-style-image) */
+
+@media (min-width: 1024px) {
+  #wrapper {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav hero"
+      "nav main"
+      "footer footer";
+    grid-template-columns: 190px 1fr;
+    align-items: stretch;
+  }
+
+  header { grid-area: header; }
+  nav { grid-area: nav; }
+  .hero { grid-area: hero; }
+  main { grid-area: main; }
+  footer { grid-area: footer; }
+
+  /* rubric: nav is vertical, 1 link per line */
+  nav ul { display: block; }
+  nav li { display: block; }
+
+  body {
+  background-image: linear-gradient(to bottom, #fff, #90c7e3);
+  background-repeat: no-repeat;
+  background-size: 190px 100%;
+}
+}
